@@ -11,10 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Consonants_Vowels.cpp" />
-    <ClCompile Include="getFrequencyofWord.cpp" />
     <ClCompile Include="getLastWord.cpp" />
-    <ClCompile Include="getSubstring.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{08614FFC-DC72-4C5C-8706-2FC1A3F2B78F}</ProjectGuid>
