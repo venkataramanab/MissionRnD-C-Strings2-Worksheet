@@ -12,7 +12,8 @@ Note:Dont modify original string Neglect Spaces at the right end and at left end
 #include <Stdio.h>
 #include <string.h>
 void reverse(char*, int, int);
-void str_words_in_rev(char *input, int len){
+char * str_words_in_rev(char *input, int len);
+char * str_words_in_rev(char *input, int len){
 	int start = 0, w_count = 0;
 	for (int i = 0; i <= len; i++){
 		if (input[i] == ' '){
@@ -27,6 +28,7 @@ void str_words_in_rev(char *input, int len){
 	if (w_count > 0){
 		reverse(input, 0, len - 1);
 	}
+	return input;
 }
 void reverse(char *in, int first, int last){
 	while (first < last){
@@ -39,6 +41,41 @@ void reverse(char *in, int first, int last){
 }
 
 char * get_last_word(char * str){
-
+	if (str != NULL){
+		int len = strlen(str);
+		char *resultStr = (char*)malloc(sizeof(char)*len);
+		char *result=NULL;
+		resultStr = str_words_in_rev(str, len);
+		int spaceCount = 0;
+		for (int i = 0; i < len; i++){
+			
+			if ((str[i] == ' ')&&(str[i+1]!=' ')&&(i+1<len)&&(str[i-1]!=' ')){
+				result = (char*)malloc(sizeof(char)*(i + 1));
+				i -= spaceCount;
+				for (int j = 0; j < i; j++){
+					result[j] = resultStr[spaceCount++];
+				}
+				result[i] = '\0';
+				break;
+			}
+			else if(str[i]==' '){
+				spaceCount++;
+			}
+		}
+		if ((result == NULL)&&(spaceCount!=0)){
+			return "";
+		}
+		else if ((result == NULL) && (spaceCount == 0)){
+			return str;
+		}
+		return result;
+	}
 	return NULL;
+}
+int strlen(char *str){
+	int len = 0;
+	while (str[len] != NULL){
+		len++;
+	}
+	return len;
 }
