@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Consonants_Vowels.cpp">
+    <ClCompile Include="getFrequencyofWord.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -19,9 +19,14 @@ namespace spec
 			int sc = 7;
 			int si = 0;
 			for (si = 0; si < sc; si++){
-				int temp_c = count_word_in_str_way_1(sentences[si],words[si]);
+				int temp_c = count_word_in_str_way_1(sentences[si], words[si]);
 				Assert::AreEqual(temp_c,counts[si], L"Error in NormalStringLastword", LINE_INFO());
 				
+			}
+			for (si = 0; si < sc; si++){
+				int temp_c = count_word_int_str_way_2_recursion(sentences[si], words[si]);
+				Assert::AreEqual(temp_c, counts[si], L"Error in NormalStringLastword", LINE_INFO());
+
 			}
 
 		}
