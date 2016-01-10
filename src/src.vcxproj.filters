@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="getLastWord.cpp">
+    <ClCompile Include="Consonants_Vowels.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
