@@ -26,7 +26,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Consonants_VowelsSpec.cpp">
+    <ClCompile Include="getSubstringSpec.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

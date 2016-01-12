@@ -16,22 +16,11 @@ original String
 
 #include <stddef.h>
 #include <stdlib.h>
-int validation(char*, int, int);
 char * get_sub_string(char *str, int i, int j){
-	if (validation(str, i, j)){
-		char *substr;
-		substr = (char *)malloc(sizeof(char)*(j - i));
-		for (int loop_var = i, k = 0; loop_var <= j; loop_var++){
-			substr[k++] = str[loop_var];
-		}
-		return substr;
+	if (str && (i <= j) && (i >= 0) && (j >= 0)){
+		char *subStr=str;
+		subStr[j] = NULL;
+		return subStr+=i*sizeof(char);
 	}
-}
-int validation(char *str, int i, int j){
-	if ((str != NULL) && (i <= j) && (i >= 0) && (j >= 0)){
-		return 1;
-	}
-	else{
-		return 0;
-	}
+	return NULL;
 }
