@@ -11,6 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Consonants_Vowels.cpp" />
+    <ClCompile Include="getFrequencyofWord.cpp" />
+    <ClCompile Include="getLastWord.cpp" />
     <ClCompile Include="getSubstring.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
