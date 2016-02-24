@@ -13,6 +13,39 @@ Note:Dont modify original string Neglect Spaces at the right end and at left end
 #include <string.h>
 void reverse(char*, int, int);
 char * str_words_in_rev(char *input, int len);
+int rightSpace(char *str, int len);
+char * get_last_word(char * str){
+	if (str){
+		int len = 0, spacePos = -1;
+		while (str[len++]);
+		len -= rightSpace(str, len);
+		for (int i = len - 1; i >= 0; i--){
+			if (str[i] == ' '){
+				spacePos = i;
+				break;
+			}
+		}
+		char *lastWord = (char*)malloc(sizeof(char)*(len - spacePos));
+		for (int i = spacePos + 1, index = 0; i < len; i++){
+			lastWord[index++] = str[i];
+		}
+		return lastWord;
+	}
+	return NULL;
+}
+int rightSpace(char *str, int len){
+	int rightSpaces = 0;
+	for (int i = len - 1; i > 0; i--){
+		if (str[i] == ' '){
+			rightSpaces++;
+		}
+		else{
+			break;
+		}
+	}
+	return rightSpaces;
+}
+/*
 char * str_words_in_rev(char *input, int len){
 	int start = 0, w_count = 0;
 	for (int i = 0; i <= len; i++){
@@ -39,7 +72,7 @@ void reverse(char *in, int first, int last){
 		last--;
 	}
 }
-
+/*
 char * get_last_word(char * str){
 	if (str != NULL){
 		int len = strlen(str);
@@ -78,4 +111,4 @@ int strlen(char *str){
 		len++;
 	}
 	return len;
-}
+}*/

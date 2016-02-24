@@ -35,8 +35,8 @@ int count_word_int_str_way_2_recursion(char *str, char *word){
 }
 int getStrLen(char *str){
 	int len = 0;
-	for (len; str[len] != NULL; len++);
-	return len;
+	while (str[len++]);
+	return len-1;
 }
 bool wordMatch(char *str, char *word){
 	int index = 0;
